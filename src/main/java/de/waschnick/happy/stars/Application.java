@@ -24,6 +24,8 @@ public class Application {
         // FIXME Remove System.out
         System.out.println("###########################");
         System.out.println("Hello World!");
+        System.out.println("System-Variable: " + System.getenv("spring.profiles.active"));
+        System.out.println("Environment-Variable: " + System.getProperty("spring.profiles.active"));
         System.out.println("###########################");
         SpringApplication.run(Application.class, args);
     }
