@@ -1,12 +1,11 @@
 angular.module('happy', ['ngResource', 'ngSanitize'])
     .controller('happyController', function ($scope, $resource, $interval) {
-
+$scope.count = 0;
         $scope.name = 'World';
 
         var versionResource = $resource('version');
         var starsResource = $resource('stars');
         var starResource = $resource('stars/:id');
-
 
         // STAR ALIVE CHECK
         $scope.alive = false;
@@ -42,8 +41,8 @@ angular.module('happy', ['ngResource', 'ngSanitize'])
             });
         };
 
-        saveStar = function (newStar) {
-            var starToSave = {id: 1, name: 'hallo', color: 'BLUE'};
+        $scope.saveStar = function (newStar) {
+            var starToSave = {id: 1, name: newStar, color: 'BLUE'};
             console.info('Saving star:');
             console.info(starToSave);
 
