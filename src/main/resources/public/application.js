@@ -6,7 +6,39 @@ angular.module('happy', ['ngResource', 'ngSanitize'])
         var starsResource = $resource('stars');
         var starResource = $resource('stars/:id');
 
- 
+        // STAR ALIVE CHECK
+        $scope.alive = false;
+
+        $scope.checkAlive = function () {
+            var promise = versionResource.get().$promise;
+            promise.then(function (infos) {
+                console.info('It is alive!');
+                $scope.alive = true;
+            });
+            promise.catch(function (error) {
+                console.error('It is dead :(');
+                console.error(error);
+                $scope.alive = false;
+            });
+        };
+
+        // execute checkALive every 30 seconds
+        $interval($scope.checkAlive, 30 * 1000);
+        // END ALIVE CHECK
+
+        // START: Stars!
+        $scope.stars = {};
+        $scope.getStars = function () {
+            var promise = starsResource.get().$promise;
+            promise.then(function (result) {
+                console.info(result);
+                $scope.stars = result;
+            });
+            promise.catch(function () {
+                console.error(error);
+                $scope.stars = {};
+            });
+        };
 
 
 
