@@ -31,11 +31,9 @@
     </div>
 
     <h6>New Star:</h6>
-
-    <form name="newStarForm">
-        <input type="text" ng-model="newStar" ng-minlength="1" ng-maxlength="255" required>
+    
         <button type="submit" ng-click="saveStar(newStar)" ng-disabled="newStarForm.$invalid">Speichern</button>
-    </form>
+
     <button type="button" class="btn btn-info"ng-click="saveStar(newStar)" ng-disabled="newStarForm.$invalid">good!</button>
 
     <button ng-click="count = count + 1">Click Me!</button>
