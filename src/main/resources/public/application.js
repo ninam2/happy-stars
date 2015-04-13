@@ -2,23 +2,11 @@ angular.module('happy', ['ngResource', 'ngSanitize'])
     .controller('happyController', function ($scope, $resource, $interval) {
         $scope.name = 'World';
 
+        var versionResource = $resource('version');
         var starsResource = $resource('stars');
         var starResource = $resource('stars/:id');
 
-
-        // START: Stars!
-        $scope.stars = {};
-        $scope.getStars = function () {
-            var promise = starsResource.get().$promise;
-            promise.then(function (result) {
-                console.info(result);
-                $scope.stars = result;
-            });
-            promise.catch(function () {
-                console.error(error);
-                $scope.stars = {};
-            });
-        };
+ 
 
 
 
