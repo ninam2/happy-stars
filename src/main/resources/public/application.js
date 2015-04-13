@@ -1,6 +1,5 @@
 angular.module('happy', ['ngResource', 'ngSanitize'])
     .controller('happyController', function ($scope, $resource, $interval) {
-        $scope.count = 0;
         $scope.name = 'World';
 
         var versionResource = $resource('version');
