@@ -42,12 +42,12 @@ angular.module('happy', ['ngResource', 'ngSanitize'])
             });
         };
 
-        $scope.saveStar = function (newStar) {
-            var starToSave = {id: 1, name: newStar, color: 'BLUE'};
+        saveStar = function (newStar) {
+            var starToSave = {id: 1, name: 'hallo', color: 'BLUE'};
             console.info('Saving star:');
             console.info(starToSave);
 
-            var promise = starsResource.save('starToSave').$promise;
+            var promise = starsResource.save(starToSave).$promise;
             promise.then(function (result) {
                 console.info('Star saved!');
                 $scope.getStars();
