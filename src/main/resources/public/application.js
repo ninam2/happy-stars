@@ -4,9 +4,9 @@ angular.module('happy', ['ngResource', 'ngSanitize'])
 
         var versionResource = $resource('version');
         var starsResource = $resource('stars');
-        var starResource = $resource('stars/:id');
+     /*   var starResource = $resource('stars/:id');*/
 
-        // STAR ALIVE CHECK
+        // STAR(Database) ALIVE CHECK
         $scope.alive = false;
 
         $scope.checkAlive = function () {
@@ -58,7 +58,7 @@ angular.module('happy', ['ngResource', 'ngSanitize'])
             });
         };
 
-        $scope.deleteStar = function (id) {
+       /* $scope.deleteStar = function (id) {
             console.info('Deleting star: ' + id);
 
             var promise = starResource.delete({id: id}).$promise;
@@ -70,7 +70,7 @@ angular.module('happy', ['ngResource', 'ngSanitize'])
                 console.error('Star not deleted :(');
                 console.error(error);
             });
-        };
+        };*/
 
 
         // END: Stars!
