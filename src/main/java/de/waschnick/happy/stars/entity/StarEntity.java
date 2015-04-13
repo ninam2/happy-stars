@@ -28,7 +28,7 @@ public class StarEntity {
 
     @NotNull
     @Size(min = 1, max = 255)
-    private String name= "hallo";
+    private String name;
 
     @NotNull
     @Enumerated(EnumType.STRING)
