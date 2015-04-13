@@ -40,8 +40,8 @@ angular.module('happy', ['ngResource', 'ngSanitize'])
             });
         };
 
-        $scope.saveStar = function (newStar) {
-            var starToSave = {id: 1, name: newStar, color: 'BLUE'};
+        $scope.saveStar("hallo"); {
+            var starToSave = {id: 1, name: "hallo", color: 'BLUE'};
             console.info('Saving star:');
             console.info(starToSave);
 
