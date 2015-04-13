@@ -55,14 +55,14 @@ public class StarController {
         Star star = new Star();
         star.setId(starEntity.getId());
         star.setColor(starEntity.getColor());
-        star.setName("hallo");
+        star.setName("good");
         return star;
     }
 
     private StarEntity mappe(Star star) {
         StarEntity entity = new StarEntity();
         entity.setColor(star.getColor());
-        entity.setName("hallo");
+        entity.setName("good");
         return entity;
     }
 
