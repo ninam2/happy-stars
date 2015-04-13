@@ -38,11 +38,16 @@
     </form>
     <button type="button" class="btn btn-info"ng-click="saveStar(newStar)" ng-disabled="newStarForm.$invalid">good!</button>
 
+    <button ng-click="count = count + 1">Click Me!</button>
+    <p>{{ count }}</p>
+    
     <h6>All Stars:</h6>
 
     <div ng-repeat="star in stars.stars" style="font-size: 9px">
         {{ star}}
     </div>
+
+
 
 </div>
 </body>
