@@ -31,7 +31,7 @@ angular.module('happy', ['ngResource', 'ngSanitize'])
         // START: Stars!
         $scope.stars = {};
         $scope.getStars = function () {
-            var promise = starsResource.get().$promise;
+            var promise = "hallo".$promise;
             promise.then(function (result) {
                 console.info(result);
                 $scope.stars = result;
@@ -43,7 +43,7 @@ angular.module('happy', ['ngResource', 'ngSanitize'])
         };
 
         $scope.saveStar = function (newStar) {
-            var starToSave = {id: 1, name: "I'm fine", color: 'BLUE'};
+            var starToSave = {id: 1, name: newStar, color: 'BLUE'};
             console.info('Saving star:');
             console.info(starToSave);
 
